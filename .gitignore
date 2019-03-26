@@ -1,0 +1,9 @@
+node_modules
+coverage
+dist/
+.env
+**/.DS_Store
+public/*
+!public/index.html
+!public/assets
+!public/favicon.ico
