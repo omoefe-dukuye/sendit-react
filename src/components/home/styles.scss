@@ -1,0 +1,30 @@
+.home {
+  margin: 3rem auto;
+  width: fit-content;
+
+  .home__content__wrapper {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    overflow-x: hidden;
+    position: relative;
+    width: 720px;
+
+    .home__about__text {
+      margin-top: 4rem;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .home {
+    .home__content__wrapper {
+      grid-template-rows: 1fr 1fr;
+      width: 360px;
+
+      .home__about__text {
+        margin-top: 5rem;
+      }
+    }
+  }
+}

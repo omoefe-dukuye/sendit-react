@@ -6,7 +6,7 @@ import ExtractTextPlugin from 'mini-css-extract-plugin';
 dotenv.config();
 
 export default {
-  entry: './src/index.jsx',
+  entry: './src/app.js',
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
@@ -43,7 +43,7 @@ export default {
         }]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|jpeg)$/,
         use: [
           'file-loader?outputPath=images/'
         ]
@@ -68,6 +68,6 @@ export default {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.jsx', '.js', '.png', '.svg', '.ico', '.jpg']
+    extensions: ['.jsx', '.js', '.png', '.svg', '.ico', '.jpg', 'jpeg']
   }
 };

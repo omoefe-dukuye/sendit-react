@@ -1,0 +1,36 @@
+.footer {
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+
+  .footer__content__container {
+    width: 20%;
+    h3 {
+      text-align: center;
+    }
+
+    ul {
+      padding-left: none;
+      li {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        span{
+          &:first-child {
+            padding-right: 1rem;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 480px) {
+  .footer {
+    .footer__content__container {
+      width: 80%;
+    }
+  }
+}

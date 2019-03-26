@@ -1,0 +1,53 @@
+.home__slider {
+  .home__slider__slide-item {
+    height: 381px;
+    position: relative;
+    width: 100%;
+  }
+
+  .slider-enter, .slider-appear {
+    position: absolute;
+    transform: translate(100%);
+  }
+  .slider-enter.slider-enter-active, .slider-appear.slider-appear-active {
+    transform: translate(0%);
+    transition: transform 800ms ease-in-out;
+  }
+  .slider-leave {
+    position: absolute;
+    transform: translate(0%);
+  }
+  .slider-leave.slider-leave-active {
+    transform: translate(-100%);
+    transition: transform 800ms ease-in-out;
+  }
+
+  .home__slider__slide-item__image {
+    height: 381px;
+  }
+
+  .home__slider__slide-item__image--map {
+    background: url('/assets/images/map.png');
+  }
+
+  .home__slider__slide-item__image--fast {
+    background: url('/assets/images/fast.jpeg');
+  }
+
+  .home__slider__slide-item__image--service {
+    background: url('/assets/images/service.jpg');
+  }
+}
+
+@media(max-width: 1080px) {
+  .home__slider{
+    .home__slider__slide-item {
+      height: 190px;
+    } 
+    
+    .home__slider__slide-item__image {
+      background-size: 360px 190px;
+      height: 190px;
+    }
+  }
+}
