@@ -23,17 +23,23 @@ export const login = loginDetails => async (dispatch) => {
     dispatch(addProfile(user));
     return;
 
-  } catch ({ response: { status } }) {
-    switch (status) {
-      case 401:
-        return 'Incorrect username or password.';
+  } catch ({ response: { data: { error } } }) {
+    return error;
+  }
+};
 
-      case 500:
-      case 502:
-        return  'Server error.';
+export const signup = signupDetails => async (dispatch) => {
+  try {
+    const { data: { token, user } } = await axios.post(`${api}/auth/signup`, signupDetails);
 
-      default:
-        return 'Unknown error.';
-    }
+    localStorage.setItem('token', token);
+
+    user.userFirstName = user['first_name'];
+
+    dispatch(addProfile(user));
+    return;
+
+  } catch ({ response: { data: { error } } }) {
+    return error;
   }
 };

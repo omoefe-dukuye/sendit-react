@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { ToastContainer } from 'react-toastify';
 import Logo from './logo';
 import AuthButtons from './authButtons';
 import Widgets from './widgets';
 import './styles.scss';
 import { addProfile } from '../../redux/actions/auth';
+import "react-toastify/dist/ReactToastify.css";
 
 
 export class Header extends Component {
@@ -25,7 +27,8 @@ export class Header extends Component {
 
     return (
       <div className="header">
-        <Logo />
+      <Logo />
+      <ToastContainer />
         {
           !user
             ? <AuthButtons />

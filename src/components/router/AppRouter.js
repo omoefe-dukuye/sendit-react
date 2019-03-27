@@ -4,14 +4,16 @@ import Header from '../header';
 import Home from '../home';
 import Footer from '../footer';
 import Login from '../login';
+import Signup from '../signup/Signup';
 
 const AppRouter = () => (
   <BrowserRouter>
     <div>
       <Header />
         <Switch>
-          <Route path={"/"} component={Home} exact />
-          <Route path={"/login"} component={Login} />
+          <Route path={'/'} component={Home} exact />
+          <Route path={'/login'} component={Login} />
+          <Route path={'/signup'} component={Signup} />
         </Switch>
       <Footer />
     </div>
