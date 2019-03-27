@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, withRouter, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { isAlphanumeric } from 'validator';
 import '@babel/polyfill';
 import PropTypes from 'prop-types';
 import { login } from '../../redux/actions/auth';
-import './styles.scss';
 
 export class Login extends Component {
   state = {
     usernameErrorMessage: '',
     passwordErrorMessage: '',
-    serverErrorMessage: '',
     username: '',
     password: '',
   }
@@ -19,8 +18,7 @@ export class Login extends Component {
   onUsernameChange = ({ target: { value: username } }) => {
     this.setState({
       username,
-      usernameErrorMessage: '',
-      serverErrorMessage: ''
+      usernameErrorMessage: ''
     });
   }
 
@@ -30,15 +28,14 @@ export class Login extends Component {
       return this.setState({ usernameErrorMessage: 'cannot be empty.' });
     }
     if (!isAlphanumeric(this.state.username)) {
-      return this.setState({ usernameErrorMessage: 'must be alphanumeric.' });
+      return this.setState({ usernameErrorMessage: 'must include only numbers and letters.' });
     }
   }
 
   onPasswordChange = ({ target: { value: password } }) => {
     this.setState({
       password,
-      passwordErrorMessage: '',
-      serverErrorMessage: ''
+      passwordErrorMessage: ''
     });
   }
 
@@ -74,7 +71,7 @@ export class Login extends Component {
 
     if (serverErrorMessage) {
       this.setState({ buttonDisabled: false });
-      this.setState({ serverErrorMessage });
+      toast.error(serverErrorMessage, { className: 'toast--error' });
     }
   }
 
