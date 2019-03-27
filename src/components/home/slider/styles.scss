@@ -3,6 +3,9 @@
     height: 381px;
     position: relative;
     width: 100%;
+    p {
+      font-style: italic;
+    }
   }
 
   .slider-enter, .slider-appear {
@@ -43,7 +46,7 @@
   .home__slider{
     .home__slider__slide-item {
       height: 190px;
-    } 
+    }
     
     .home__slider__slide-item__image {
       background-size: 360px 190px;

@@ -1,3 +1,5 @@
+@import '../../styles/base/settings';
+
 .header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   display: flex;
@@ -36,6 +38,9 @@
   > .header__auth-buttons {
     display: flex;
     align-items: center;
+    a {
+      color: $green;
+    }
 
     > a:first-child {
       margin-right: 2rem;
