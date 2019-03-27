@@ -5,8 +5,8 @@ import './styles.scss';
 
 const captions = {
   fast: 'Unbelievably fast delivery...',
-  map: 'Distance and time estimates with Google Maps',
-  service: 'Excellent customer service'
+  map: 'Distance and time estimates with Google Maps...',
+  service: 'Excellent customer service...'
 };
 
 

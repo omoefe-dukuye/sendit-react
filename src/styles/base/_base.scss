@@ -5,21 +5,42 @@ html {
 
 body {
   color: white;
-  height: 100%;
+  min-height: 100vh;
   font: 1.5rem/1.5 'Hind Madurai', sans-serif;
   > #app {
     background-attachment: fixed;
     background-image: url(/assets/images/parcel.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    min-height: 100vh;
     > div {
       background-color: rgba(0, 0, 0, 0.7);
       display: grid;
       grid-template-rows: auto 1fr auto;
-      height: 100%;
+      min-height: 100vh;
     }
   }
+}
+
+@-webkit-keyframes autofill {
+  to {
+      color: white;
+      background: transparent;
+  }
+}
+
+@keyframes autofill {
+  to {
+      color: white;
+      background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 button {
@@ -31,12 +52,58 @@ button:disabled {
 }
 
 a {
-  color: hsl(120, 50%, 50%);
+  color: $green;
   text-decoration: none;
 }
 
-@media(max-width: 480px) {
+@media(max-width: 1080px) {
   html {
-    height: 100%;
+    min-height: 100%;
+  }
+}
+
+.form__page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .form__container {
+    width: 30rem;
+    .form {
+      width: 100%;
+      input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        color: white;
+        display: block;
+        outline: none;
+        text-indent: 1rem;
+        width: 100%;
+
+        &.red-border {
+          border-bottom-color: red;
+        }
+      }
+
+      button {
+        background: transparent;
+        border-color: $green;
+        border-radius: 4px;
+        color: $green;
+        margin: 2rem 0;
+        padding: 0.5rem;
+        text-align: center;
+        width: 7rem;
+      }
+      .form__input-top {
+        .form__input-top__error {
+          color: red;
+          &::before {
+            content: ' ';
+          }
+        }
+      }
+    }
   }
 }

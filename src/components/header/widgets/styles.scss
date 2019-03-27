@@ -1,0 +1,23 @@
+@import '../../../styles/base/settings';
+
+.header__widgets {
+  display: flex;
+  align-items: center;
+  a {
+    color: $green;
+    margin-right: 2rem;
+    .header__widgets__icon {
+      path {
+        color: $green;
+      }
+    }
+    svg {
+      fill: $green;
+    }
+  }
+  button {
+    background: transparent;
+    border: none;
+    color: $green
+  }
+}
