@@ -4,7 +4,9 @@ import Header from '../header';
 import Home from '../home';
 import Footer from '../footer';
 import Login from '../login';
-import Signup from '../signup/Signup';
+import Signup from '../signup';
+import Dashboard from '../dashboard';
+import AdminDashboard from '../adminDashboard';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -14,6 +16,8 @@ const AppRouter = () => (
           <Route path={'/'} component={Home} exact />
           <Route path={'/login'} component={Login} />
           <Route path={'/signup'} component={Signup} />
+          <Route path={'/dashboard'} component={Dashboard} />
+          <Route path={'/admin-dashboard'} component={AdminDashboard} />
         </Switch>
       <Footer />
     </div>

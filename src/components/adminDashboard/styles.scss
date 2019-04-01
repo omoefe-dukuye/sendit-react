@@ -1,0 +1,25 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+select {
+  background: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+  box-shadow: none;
+  display: block;
+  outline: none;
+}
+
+@media(max-width: 1020px) {
+  .dashboard {
+    display: block;
+
+    .form__page {
+      height: 100%;
+    }
+  }
+}

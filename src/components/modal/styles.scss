@@ -1,0 +1,17 @@
+.modal__background {
+  align-items: center;
+  animation: fade 0.5s;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  position: fixed;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 5;
+  .modal__modal {
+    background: #333;
+    border-radius: 0.5rem;
+  }
+}

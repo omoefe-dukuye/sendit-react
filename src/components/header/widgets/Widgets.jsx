@@ -9,7 +9,8 @@ import { removeProfile } from '../../../redux/actions/auth';
 import './styles.scss';
 
 
-export const Widgets = ({ user: { userFirstName: firstname, isAdmin }, dispatch }) => {
+export const Widgets = ({ user, dispatch, history, location: { pathname } }) => {
+  const { userFirstName: firstname, isAdmin } = user || {};
   const handleLogout = () => {
     dispatch(removeProfile());
     localStorage.clear();
@@ -18,7 +19,7 @@ export const Widgets = ({ user: { userFirstName: firstname, isAdmin }, dispatch 
 
   return (
     <div className="header__widgets">
-      <Link to={`/${isAdmin ? 'admin' : 'user' }`}>
+      <Link to={`/${isAdmin && !pathname.includes('/admin-dashboard') ? 'admin-' : ''}dashboard`}>
         {firstname}&nbsp;
         <FontAwesomeIcon
           className="header__widgets__icon"
@@ -34,7 +35,9 @@ export const Widgets = ({ user: { userFirstName: firstname, isAdmin }, dispatch 
 
 Widgets.propTypes = {
   dispatch: PropTypes.func,
-  user: PropTypes.object
+  user: PropTypes.object,
+  history: PropTypes.object,
+  location: PropTypes.object
 }
 
 const mapStateToProps = ({ auth: { isLoggedIn } }) => ({ isLoggedIn });
