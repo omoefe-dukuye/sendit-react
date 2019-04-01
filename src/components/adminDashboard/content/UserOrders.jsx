@@ -2,81 +2,85 @@ import React, { Component } from 'react';
 import '@babel/polyfill';
 import { toast } from 'react-toastify';
 import axios from '../../../utils/axiosConfig';
+import Loader from '../../loader';
+import AllParcels from './allParcels';
 
 export class CancelOrder extends Component {
   state = {
-    parcelId: '',
+    userId: '',
     ParcelIdErrorMessage: ''
   };
 
-  onParcelIdChange = ({ target: { value: parcelId } }) => {
+  onParcelIdChange = ({ target: { value: userId } }) => {
     this.setState({
-      parcelId,
-      parcelIdErrorMessage: ''
+      userId,
+      userIdErrorMessage: ''
     });
   };
 
   onParcelIdBlur = async () => {
-    const { parcelId } = this.state;
-    if (!Number(parcelId)) {
-      return this.setState({ parcelIdErrorMessage: 'must be a number.' });
+    const { userId } = this.state;
+    if (!Number(userId)) {
+      return this.setState({ userIdErrorMessage: 'must be a number.' });
     }
   }
 
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { parcelId } = this.state;
+    const { userId } = this.state;
 
-    if (!Number(parcelId)) {
-      return this.setState({ parcelId: 'must be a number greater than zero.' });
+    if (!Number(userId)) {
+      return this.setState({ userId: 'must be a number greater than zero.' });
     }
 
-    this.setState({ buttonDisabled: true });
+    this.setState({ buttonDisabled: true, loading: true });
 
     try {
-      await axios.patch(`${process.env.API_ROOT_URL}/parcels/${parcelId}/cancel`);
-      toast.success('Order cancelled');
+      const { data: { orders: parcels } } = await axios.get(`${process.env.API_ROOT_URL}/users/${userId}/parcels`);
+      this.setState({ parcels });
     } catch ({ response: { data: { error } } }) {
       toast.error(error);
     } 
 
-    this.setState({ buttonDisabled: false });
+    this.setState({ buttonDisabled: false, loading: false });
   }
 
   render() {
     const {
       state: {
         buttonDisabled,
-        parcelId,
-        parcelIdErrorMessage,
+        loading,
+        userId,
+        parcels = [],
+        userIdErrorMessage,
       },
       onParcelIdBlur,
       onParcelIdChange,
       handleSubmit,
     } = this;
 
-    const message = parcelIdErrorMessage || false;
+    const message = userIdErrorMessage || false;
 
 
     const disableButton = buttonDisabled || message;
 
 
     return (
-      <div className='form__page create-order'>
+      <div className='form__page create-order user-orders'>
         <div className='form__container'>
           <form className='form create-order__form'>
             <div className='form__input-top'>
               <p>
-                <span className='form__input-top__label'>Parcel ID</span>
-                <span className='form__input-top__error'>{parcelIdErrorMessage}</span>
+                <span className='form__input-top__label'>User ID</span>
+                <span className='form__input-top__error'>{userIdErrorMessage}</span>
               </p>
             </div>
             <input
-              className={parcelIdErrorMessage ? 'red-border' : ''}
+              className={userIdErrorMessage ? 'red-border' : ''}
               type='number'
-              name='parcelId'
-              value={parcelId}
+              name='userId'
+              value={userId}
               onChange={onParcelIdChange}
               onBlur={onParcelIdBlur}
               required
@@ -87,12 +91,17 @@ export class CancelOrder extends Component {
               onClick={handleSubmit}
             >
               <span className={`button__text--create-order ${buttonDisabled ? 'hidden' : undefined}`}>
-                Cancel
+                Get Orders
               </span>
               <span className={buttonDisabled ? 'spinner spinner--button' : undefined}></span>
             </button>
           </form>
-        </div>
+            {
+              loading
+                ? <Loader />
+                : <AllParcels parcels={parcels} />
+            }
+          </div>
       </div>
     );
   }

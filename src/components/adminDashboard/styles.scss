@@ -3,6 +3,14 @@
   grid-template-columns: auto 1fr;
 }
 
+.user-orders {
+  ol {
+    position: relative;
+    left: -25%;
+    width: 150%;
+  }
+}
+
 select {
   background: transparent;
   color: white;

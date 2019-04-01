@@ -2,28 +2,28 @@ import React, { Component } from 'react';
 import '@babel/polyfill';
 import { toast } from 'react-toastify';
 import Modal from '../../modal';
-import UpdatedParcel from './updatedParcel';
+import UpdatedParcelLocation from './updatedParcelLocation';
 import axios from '../../../utils/axiosConfig';
 
 export class UpdateOrder extends Component {
   state = {
     parcelId: '',
     ParcelIdErrorMessage: '',
-    destinationErrorMessage: '',
-    destination: ''
+    locationErrorMessage: '',
+    location: ''
   };
 
-  onDestinationChange = ({ target: { value: destination } }) => {
+  onLocationChange = ({ target: { value: location } }) => {
     this.setState({
-      destination,
-      destinationErrorMessage: ''
+      location,
+      locationErrorMessage: ''
     });
   };
 
-  onDestinationBlur = async () => {
-    const { destination } = this.state;
-    if (!destination) {
-      return this.setState({ destinationErrorMessage: 'cannot be empty.' });
+  onLocationBlur = async () => {
+    const { location } = this.state;
+    if (!location) {
+      return this.setState({ locationErrorMessage: 'cannot be empty.' });
     }
   }
 
@@ -44,10 +44,10 @@ export class UpdateOrder extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { destination, parcelId } = this.state;
+    const { location, parcelId } = this.state;
 
-    if (!destination) {
-      return this.setState({ destinationErrorMessage: 'cannot be empty.' });
+    if (!location) {
+      return this.setState({ locationErrorMessage: 'cannot be empty.' });
     }
 
     if (!Number(parcelId)) {
@@ -57,7 +57,7 @@ export class UpdateOrder extends Component {
     this.setState({ buttonDisabled: true });
 
     try {
-      const { data } = await axios.patch(`${process.env.API_ROOT_URL}/parcels/${parcelId}/destination`, { destination });
+      const { data } = await axios.patch(`${process.env.API_ROOT_URL}/parcels/${parcelId}/currentlocation`, { location });
       this.setState({ newParcel: data });
     } catch ({ response: { data: { error } } }) {
       toast.error(error);
@@ -74,21 +74,21 @@ export class UpdateOrder extends Component {
     const {
       state: {
         buttonDisabled,
-        destination,
+        location,
         parcelId,
-        destinationErrorMessage,
+        locationErrorMessage,
         parcelIdErrorMessage,
         newParcel
       },
-      onDestinationChange,
-      onDestinationBlur,
+      onLocationChange,
+      onLocationBlur,
       onParcelIdBlur,
       onParcelIdChange,
       handleSubmit,
       removeNewParcel
     } = this;
 
-    const message = destinationErrorMessage
+    const message = locationErrorMessage
       || parcelIdErrorMessage
       || false;
 
@@ -102,16 +102,16 @@ export class UpdateOrder extends Component {
           <form className='form create-order__form'>
             <div className='form__input-top'>
               <p>
-                <span className='form__input-top__label'>New Destination</span>
-                <span className='form__input-top__error'>{destinationErrorMessage}</span>
+                <span className='form__input-top__label'>Current Location</span>
+                <span className='form__input-top__error'>{locationErrorMessage}</span>
               </p>
             </div>
             <input
-              className={destinationErrorMessage ? 'red-border' : ''}
-              name='destination'
-              value={destination}
-              onChange={onDestinationChange}
-              onBlur={onDestinationBlur}
+              className={locationErrorMessage ? 'red-border' : ''}
+              name='location'
+              value={location}
+              onChange={onLocationChange}
+              onBlur={onLocationBlur}
               required
             />
             <div className='form__input-top'>
@@ -147,7 +147,7 @@ export class UpdateOrder extends Component {
               <Modal
               isOpen={!!newParcel}
               hideModal={removeNewParcel}
-              content={<UpdatedParcel parcel={newParcel} />}
+              content={<UpdatedParcelLocation parcel={newParcel} />}
               />
         }
       </div>

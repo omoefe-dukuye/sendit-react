@@ -8,6 +8,7 @@ const Parcel = ({ parcel: {
   weight,
   distance,
   price,
+  placed_by: placeBy,
   status,
   sent_on: created,
   delivered_on: delivered
@@ -17,6 +18,8 @@ const Parcel = ({ parcel: {
       <tbody>
         <tr>
           <th>ID</th><td>{id}</td>
+        </tr><tr>
+          <th>Placed By</th><td>{placeBy}</td>
         </tr><tr>
           <th>Weight</th><td>{weight} kg</td>
         </tr><tr>

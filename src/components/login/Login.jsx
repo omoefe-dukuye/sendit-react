@@ -77,7 +77,7 @@ export class Login extends Component {
 
   render() {
     if (this.props.user && this.props.history.location.pathname === '/login') {
-      return <Redirect to="/dashboard" />;
+      return <Redirect to={`/${this.props.user.is_admin ? 'admin-' : ''}dashboard`} />;
     }
 
     const {

@@ -36,7 +36,7 @@ export class OrderDetails extends Component {
     this.setState({ buttonDisabled: true });
 
     try {
-      const { data: { parcel: newParcel } } = await axios.get(`${process.env.API_ROOT_URL}/parcels/${parcelId}`);
+      const { data: { parcel: newParcel } } = await axios.get(`${process.env.API_ROOT_URL}/admin/parcels/${parcelId}`);
       this.setState({ newParcel });
     } catch ({ response: { data: { error } } }) {
       toast.error(error);
