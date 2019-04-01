@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render static component 1`] = `
+<div
+  className="create-order__new-order"
+>
+  <h3>
+    Parcel Updated
+  </h3>
+  <ul>
+    <li>
+      New Destination: 
+      Ikeja, Nigeria
+    </li>
+    <li>
+      New Distance: 
+      4 km
+    </li>
+    <li>
+      Addtional Price: 
+      N 600
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render static component 1`] = `
+<li>
+  <table>
+    <tbody>
+      <tr>
+        <th>
+          ID
+        </th>
+        <td>
+          34
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Placed By
+        </th>
+        <td>
+          14
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Weight
+        </th>
+        <td>
+          5
+           kg
+        </td>
+      </tr>
+      <tr>
+        <th>
+          From
+        </th>
+        <td>
+          1 Aminu St, Mende, Lagos, Nigeria
+        </td>
+      </tr>
+      <tr>
+        <th>
+          To
+        </th>
+        <td>
+          Mushin, Lagos, Nigeria
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Distance
+        </th>
+        <td>
+          5
+           km
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Price
+        </th>
+        <td>
+          N 625
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Status
+        </th>
+        <td>
+          created
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Created
+        </th>
+        <td>
+          March 27th 2019, 9:29:57 pm
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Delivered
+        </th>
+        <td>
+          not delivered yet
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+`;

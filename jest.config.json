@@ -6,5 +6,11 @@
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
   ],
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
+  },
+  "moduleNameMapper": {
+    "\\.(css|styl|less|sass|scss)$": "identity-obj-proxy"
+  },
   "collectCoverage": true
 }

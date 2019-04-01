@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should handle server errors 1`] = `
+<div>
+  <_default />
+</div>
+`;
+
+exports[`Should render static component 1`] = `
+<div>
+  <_default />
+</div>
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render static component 1`] = `
+<div
+  className="create-order__new-order"
+>
+  <h3>
+    New Order Created
+  </h3>
+  <ul>
+    <li>
+      Parcel ID: 
+      34
+    </li>
+    <li>
+      Location: 
+      1 Aminu St, Mende, Lagos, Nigeria
+    </li>
+    <li>
+      Destination: 
+      Mushin, Lagos, Nigeria
+    </li>
+    <li>
+      Distance: 
+      5
+    </li>
+    <li>
+      Price: 
+      N 625
+    </li>
+  </ul>
+</div>
+`;

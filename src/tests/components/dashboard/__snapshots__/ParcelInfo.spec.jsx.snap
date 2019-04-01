@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render static component 1`] = `
+<div
+  className="parcel-info--wrapper"
+>
+  <div
+    className="parcel-info--info--wrapper"
+  >
+    <div
+      className="parcel-info--info"
+    >
+      <ul>
+        <li>
+          ID: 
+          34
+        </li>
+        <li>
+          Placed by: 
+          14
+        </li>
+        <li>
+          From: 
+          1 Aminu St, Mende, Lagos, Nigeria
+        </li>
+        <li>
+          To: 
+          Mushin, Lagos, Nigeria
+        </li>
+        <li>
+          Location: 
+          1 Aminu St, Mende, Lagos, Nigeria
+        </li>
+        <li>
+          Weight: 
+          5
+        </li>
+        <li>
+          Total Distance: 
+          5
+        </li>
+        <li>
+          Price: 
+          N 625
+        </li>
+        <li>
+          Created On: 
+          March 27th 2019, 9:29:57 pm
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="parcel-info--map"
+  >
+    <Wrapper
+      destination={
+        Object {
+          "lat": 6.601838,
+          "lng": 3.3514863,
+        }
+      }
+      initialCenter={
+        Object {
+          "lat": 6.570213,
+          "lng": 3.3731765,
+        }
+      }
+      pickupLocation={
+        Object {
+          "lat": 6.570213,
+          "lng": 3.3731765,
+        }
+      }
+    />
+  </div>
+</div>
+`;

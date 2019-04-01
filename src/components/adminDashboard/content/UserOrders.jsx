@@ -31,7 +31,7 @@ export class CancelOrder extends Component {
     const { userId } = this.state;
 
     if (!Number(userId)) {
-      return this.setState({ userId: 'must be a number greater than zero.' });
+      return this.setState({ userIdErrorMessage: 'must be a number.' });
     }
 
     this.setState({ buttonDisabled: true, loading: true });

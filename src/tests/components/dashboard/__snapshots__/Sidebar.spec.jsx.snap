@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render static component 1`] = `
+<div
+  className="sidebar"
+>
+  <div
+    className="sidebar-links"
+  >
+    <ul>
+      <li
+        className="sidebar-links__link"
+      >
+        <NavLink
+          activeClassName="sidebar-links__link--active"
+          to="/admin-dashboard/status"
+        >
+          Status
+        </NavLink>
+      </li>
+      <li
+        className="sidebar-links__link"
+      >
+        <NavLink
+          activeClassName="sidebar-links__link--active"
+          to="/admin-dashboard/location"
+        >
+          Location
+        </NavLink>
+      </li>
+      <li
+        className="sidebar-links__link"
+      >
+        <NavLink
+          activeClassName="sidebar-links__link--active"
+          to="/admin-dashboard/details"
+        >
+          Details
+        </NavLink>
+      </li>
+      <li
+        className="sidebar-links__link"
+      >
+        <NavLink
+          activeClassName="sidebar-links__link--active"
+          to="/admin-dashboard/user"
+        >
+          User
+        </NavLink>
+      </li>
+      <li
+        className="sidebar-links__link"
+      >
+        <NavLink
+          activeClassName="sidebar-links__link--active"
+          to="/admin-dashboard/all"
+        >
+          All
+        </NavLink>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

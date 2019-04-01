@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render static component 1`] = `
+<div
+  className="form__page create-order user-orders"
+>
+  <div
+    className="form__container"
+  >
+    <form
+      className="form create-order__form"
+    >
+      <div
+        className="form__input-top"
+      >
+        <p>
+          <span
+            className="form__input-top__label"
+          >
+            User ID
+          </span>
+          <span
+            className="form__input-top__error"
+          />
+        </p>
+      </div>
+      <input
+        className=""
+        name="userId"
+        onBlur={[Function]}
+        onChange={[Function]}
+        required={true}
+        type="number"
+        value=""
+      />
+      <button
+        className="button create-order__form__button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <span
+          className="button__text--create-order undefined"
+        >
+          Get Orders
+        </span>
+        <span />
+      </button>
+    </form>
+    <AllParcels
+      parcels={Array []}
+    />
+  </div>
+</div>
+`;

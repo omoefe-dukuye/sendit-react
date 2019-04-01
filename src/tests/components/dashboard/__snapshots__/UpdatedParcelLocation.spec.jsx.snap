@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render static component 1`] = `
+<div
+  className="create-order__new-order"
+>
+  <h3>
+    Parcel Updated
+  </h3>
+  <ul>
+    <li>
+      Current Location: 
+      Kampala, Uganda
+    </li>
+    <li>
+      New Distance: 
+      3058 km
+    </li>
+  </ul>
+</div>
+`;

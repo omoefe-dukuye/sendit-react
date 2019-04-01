@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render static component 1`] = `
+<div
+  className="dashboard"
+>
+  <SideBar />
+  <Switch>
+    <Route
+      component={[Function]}
+      path="/admin-dashboard/status"
+    />
+    <Route
+      component={[Function]}
+      path="/admin-dashboard/location"
+    />
+    <Route
+      component={[Function]}
+      path="/admin-dashboard/details"
+    />
+    <Route
+      component={[Function]}
+      path="/admin-dashboard/user"
+    />
+    <Route
+      component={[Function]}
+      path="/admin-dashboard/all"
+    />
+    <Redirect
+      to="/admin-dashboard/status"
+    />
+  </Switch>
+</div>
+`;

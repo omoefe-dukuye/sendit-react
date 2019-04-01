@@ -12,7 +12,7 @@ import './styles.scss';
 
 export class Dashboard extends Component {
   componentDidUpdate() {
-    const { user, user: { isAdmin, is_admin }, history } = this.props;
+    const { user, user: { isAdmin, is_admin } = {}, history } = this.props;
     if (!user) {
       return history.push('/login');
     }
