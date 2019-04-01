@@ -6,17 +6,21 @@ import Sidebar from './sidebar';
 import AllOrders from './content/AllOrders';
 import StatusChange from './content/StatusChange';
 import UpdateOrder from './content/UpdateOrder';
-import CancelOrder from './content/CancelOrder';
+import UserOrders from './content/UserOrders';
 import OrderDetails from './content/OrderDetails';
 import './styles.scss';
 
 export class Dashboard extends Component {
   componentDidUpdate() {
-    const { user, history } = this.props;
-
+    const { user, user: { isAdmin, is_admin }, history } = this.props;
     if (!user) {
       return history.push('/login');
     }
+
+    if(isAdmin || is_admin) {
+      return
+    }
+    history.push('/dashboard');
   }
 
   render() {
@@ -26,8 +30,8 @@ export class Dashboard extends Component {
         <Switch>
         <Route path='/admin-dashboard/status' component={StatusChange} />
         <Route path='/admin-dashboard/location' component={UpdateOrder} />
-        <Route path='/admin-dashboard/details' component={CancelOrder} />
-        <Route path='/admin-dashboard/user' component={OrderDetails} />
+        <Route path='/admin-dashboard/details' component={OrderDetails} />
+        <Route path='/admin-dashboard/user' component={UserOrders} />
         <Route path='/admin-dashboard/all' component={AllOrders} />
         <Redirect to='/admin-dashboard/status' />
         </Switch>

@@ -12,6 +12,7 @@ const ParcelInfo = ({ parcel }) => {
     weight,
     distance,
     price,
+    placed_by: placedBy,
     sent_on: createdOn,
     coords: [pickupLocation, initialCenter, destination]
   } = parcel;
@@ -22,6 +23,7 @@ const ParcelInfo = ({ parcel }) => {
         <div className='parcel-info--info'>
           <ul>
             <li>ID: {id}</li>
+            {placedBy && <li>Placed by: {placedBy}</li>}
             <li>From: {from}</li>
             <li>To: {to}</li>
             <li>Location: {location}</li>

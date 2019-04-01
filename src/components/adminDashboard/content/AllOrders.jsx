@@ -11,7 +11,7 @@ export default class AllOrders extends Component {
 
   async componentDidMount() {
     try {
-      const { data: { orders: parcels } } = await axios.get(`${process.env.API_ROOT_URL}/parcels`);
+      const { data: { orders: parcels } } = await axios.get(`${process.env.API_ROOT_URL}/admin/parcels`);
       this.setState({ parcels });
     } catch ({ response: { data: { error } } }) {
       toast.error(error);

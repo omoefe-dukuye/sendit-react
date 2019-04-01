@@ -10,7 +10,7 @@ import './styles.scss';
 
 
 export const Widgets = ({ user, dispatch, history, location: { pathname } }) => {
-  const { userFirstName: firstname, isAdmin } = user || {};
+  const { userFirstName: firstname, isAdmin, is_admin } = user || {};
   const handleLogout = () => {
     dispatch(removeProfile());
     localStorage.clear();
@@ -19,11 +19,11 @@ export const Widgets = ({ user, dispatch, history, location: { pathname } }) => 
 
   return (
     <div className="header__widgets">
-      <Link to={`/${isAdmin && !pathname.includes('/admin-dashboard') ? 'admin-' : ''}dashboard`}>
+      <Link to={`/${(isAdmin || is_admin) && !pathname.includes('/admin-dashboard') ? 'admin-' : ''}dashboard`}>
         {firstname}&nbsp;
         <FontAwesomeIcon
           className="header__widgets__icon"
-          icon={isAdmin ? faUserTie : faUser}
+          icon={(isAdmin || is_admin) ? faUserTie : faUser}
         />
       </Link>
       <button onClick={handleLogout}>
