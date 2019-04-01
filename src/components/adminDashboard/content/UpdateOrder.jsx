@@ -51,7 +51,7 @@ export class UpdateOrder extends Component {
     }
 
     if (!Number(parcelId)) {
-      return this.setState({ parcelId: 'must be a number greater than zero.' });
+      return this.setState({ parcelIdErrorMessage: 'must be a number.' });
     }
 
     this.setState({ buttonDisabled: true });

@@ -7,7 +7,7 @@ export class StatusChange extends Component {
   state = {
     status: '',
     parcelId: '',
-    ParcelIdErrorMessage: ''
+    parcelIdErrorMessage: ''
   };
 
   onParcelIdChange = ({ target: { value: parcelId } }) => {
@@ -34,7 +34,7 @@ export class StatusChange extends Component {
     const { parcelId, status } = this.state;
 
     if (!Number(parcelId)) {
-      return this.setState({ parcelId: 'must be a number greater than zero.' });
+      return this.setState({ parcelIdErrorMessage: 'must be a number.' });
     }
 
     this.setState({ buttonDisabled: true });

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render static component 1`] = `
+<ol>
+  <Parcel
+    key="uuid"
+    parcel={
+      Object {
+        "coords": Array [
+          Object {
+            "lat": 6.570213,
+            "lng": 3.3731765,
+          },
+          Object {
+            "lat": 6.570213,
+            "lng": 3.3731765,
+          },
+          Object {
+            "lat": 6.601838,
+            "lng": 3.3514863,
+          },
+        ],
+        "current_location": "1 Aminu St, Mende, Lagos, Nigeria",
+        "delivered_on": "not delivered yet",
+        "destination": "Mushin, Lagos, Nigeria",
+        "distance": "5",
+        "distance_metric": "km",
+        "id": 34,
+        "pickup_location": "1 Aminu St, Mende, Lagos, Nigeria",
+        "placed_by": 14,
+        "price": "N 625",
+        "sent_on": "March 27th 2019, 9:29:57 pm",
+        "status": "created",
+        "weight": "5",
+        "weight_metric": "kg",
+      }
+    }
+  />
+  <Parcel
+    key="uuid"
+    parcel={
+      Object {
+        "current_location": "Obalende, Lagos, Nigeria",
+        "delivered_on": "not delivered yet",
+        "destination": "Ipaja Rd, Lagos, Nigeria",
+        "distance": "23",
+        "distance_metric": "km",
+        "id": 36,
+        "pickup_location": "Obalende, Lagos, Nigeria",
+        "placed_by": 14,
+        "price": "N 515",
+        "sent_on": "March 30th 2019, 7:17:12 am",
+        "status": "created",
+        "weight": "0.13",
+        "weight_metric": "kg",
+      }
+    }
+  />
+</ol>
+`;

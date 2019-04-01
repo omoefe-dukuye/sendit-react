@@ -7,7 +7,7 @@ import axios from '../../../utils/axiosConfig';
 export class OrderDetails extends Component {
   state = {
     parcelId: '',
-    ParcelIdErrorMessage: ''
+    parcelIdErrorMessage: ''
   };
 
   onParcelIdChange = ({ target: { value: parcelId } }) => {
@@ -30,7 +30,7 @@ export class OrderDetails extends Component {
     const { parcelId } = this.state;
 
     if (!Number(parcelId)) {
-      return this.setState({ parcelId: 'must be a number greater than zero.' });
+      return this.setState({ parcelIdErrorMessage: 'must be a number.' });
     }
 
     this.setState({ buttonDisabled: true });

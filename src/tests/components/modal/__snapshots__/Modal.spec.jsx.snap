@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render static component 1`] = `
+<div
+  className="modal__background"
+>
+  <div
+    className="modal__modal"
+  />
+</div>
+`;
