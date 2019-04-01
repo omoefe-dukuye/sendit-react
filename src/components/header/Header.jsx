@@ -16,21 +16,35 @@ export class Header extends Component {
   componentDidMount () {
     const { token } = localStorage;
     if (token) {
-      const user = JSON.parse(window.atob(token.split('.')[1]));
-      this.props.dispatch(addProfile(user));
-      this.setState({ isLoggedIn: true })
+      try {
+        const user = JSON.parse(window.atob(token.split('.')[1]));
+        this.props.dispatch(addProfile(user));
+        this.setState({ isLoggedIn: true })
+      } catch (error) {
+        this.setState({ isLoggedIn: false })
+      }
+      
+    }
+  }
+
+  componentDidUpdate() {
+    if(!this.state.isLoggedIn && this.props.user) {
+      this.setState({ isLoggedIn: true });
+    } else if (this.state.isLoggedIn && !this.props.user) {
+      this.setState({ isLoggedIn: false });
     }
   }
 
   render() {
     const { user } = this.props;
+    const { isLoggedIn } = this.state;
 
     return (
       <div className="header">
       <Logo />
       <ToastContainer />
         {
-          !user
+          !isLoggedIn
             ? <AuthButtons />
             : <Widgets user={user}/>
         }

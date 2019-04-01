@@ -1,3 +1,4 @@
 export const SET_LOGGED_IN_STATE = 'SET_LOGGED_IN_STATE';
 export const ADD_PROFILE = 'ADD_PROFILE';
 export const REMOVE_PROFILE = 'REMOVE_PROFILE';
+export const ADD_ORDER = 'ADD_ORDER';

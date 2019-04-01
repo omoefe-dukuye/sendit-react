@@ -60,6 +60,7 @@ export default {
     new ExtractTextPlugin({ filename: 'styles.css' }),
     new webpack.EnvironmentPlugin([
       'API_ROOT_URL',
+      'GOOGLE_API_KEY'
     ])
   ],
   devtool: 'cheap-module-eval-source-map',

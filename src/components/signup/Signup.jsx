@@ -41,7 +41,7 @@ export class Signup extends Component {
     }
 
     try {
-      await axios.get(`${process.env.API_ROOT_URL}/users/checkUsername/${username}`);
+      await axios.get(`${process.env.API_ROOT_URL}/dashboards/checkUsername/${username}`);
     } catch ({ response: { status } }) {
       return this.setState({ usernameErrorMessage: 'already taken.' });
     }
@@ -98,7 +98,7 @@ export class Signup extends Component {
     }
 
     try {
-      await axios.get(`${process.env.API_ROOT_URL}/users/checkEmail/${email}`);
+      await axios.get(`${process.env.API_ROOT_URL}/dashboards/checkEmail/${email}`);
     } catch ({ response: { status } }) {
       return this.setState({ emailErrorMessage: 'already taken.' });
     }
@@ -189,7 +189,7 @@ export class Signup extends Component {
 
   render() {
     if (this.props.user && this.props.history.location.pathname === '/signup') {
-      return <Redirect to="/user" />;
+      return <Redirect to="/dashboard" />;
     }
 
     const {

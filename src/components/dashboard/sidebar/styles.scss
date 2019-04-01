@@ -1,0 +1,40 @@
+@import '../../../styles/base/settings';
+
+.sidebar {
+  background: hsla(120, 50%, 75%, 0.1);
+  width: 12rem;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    a {
+      display: block;
+      text-indent: 1rem;
+      width: 100%;
+    }
+
+    .sidebar-links__link--active {
+      background: $green;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    &.sticky {
+      height: auto;
+      background: hsla(120, 50%, 0%, 0.5);
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin: 0 auto;
+      a {
+        text-indent: 0;
+        text-align: center;
+      }
+    }
+  }
+}
