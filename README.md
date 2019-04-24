@@ -3,6 +3,3 @@
 
 ### SendIT-React
 This is a re-do of the front-end of the original [SendIT app](https://github.com/un-tethered/SendIT)
-
-### See Live App Here
-https://the-sendit-app-react.herokuapp.com
